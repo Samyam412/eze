@@ -6,8 +6,8 @@ export default function HomePage() {
   return (
     <main className="w-full">
       <HomeBanner />
-      <FeaturedProducts />
-      <HomeItems />
+      {/* <FeaturedProducts /> */}
+      {/* <HomeItems /> */}
     </main>
   );
 }

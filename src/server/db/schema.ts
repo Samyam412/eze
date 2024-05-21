@@ -18,7 +18,7 @@ import {
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
-export const createTable = pgTableCreator((name) => `toysnpark_${name}`);
+export const createTable = pgTableCreator((name) => `eze_${name}`);
 
 export const CategoryTable = createTable("category", {
   id: uuid("id").primaryKey().defaultRandom(),
