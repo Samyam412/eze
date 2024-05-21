@@ -1,0 +1,79 @@
+.parent {
+  --_br: 2rem;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .parent {
+    grid-template-rows: repeat(4, 1fr);
+  }
+  .div1 {
+    grid-area: 1 / 1 / 5 / 5;
+  }
+
+  .div2 {
+    grid-area: 1 / 5 / 3 / 7;
+  }
+  .div3 {
+    grid-area: 1 / 7 / 5 / 9;
+  }
+  .div4 {
+    grid-area: 3 / 4 / 5 / 7;
+    -webkit-box-shadow: -8px -8px 0px 8px rgba(255, 255, 255, 1);
+    -moz-box-shadow: -8px -8px 0px 8px rgba(255, 255, 255, 1);
+    box-shadow: -8px -8px 0px 8px rgba(255, 255, 255, 1);
+  }
+
+  .div1::before,
+  .div1::after,
+  .div2::after,
+  .div4::after {
+    --_size: var(--_br);
+    content: "";
+    position: absolute;
+    width: var(--_size);
+    aspect-ratio: 1;
+    background-image: radial-gradient(
+      circle at 100% 100%,
+      transparent var(--_size),
+      var(--_corner-color, white) calc(var(--_size) + 1px)
+    );
+    @apply rotate-180;
+  }
+
+  .div4::after {
+    --_corner-color: white;
+    grid-column: 5;
+    grid-row: 2 / 3;
+    left: -3rem;
+    bottom: 0rem;
+  }
+  .div2::after {
+    --_corner-color: white;
+    grid-column: 4;
+    grid-row: 2 / 3;
+    left: -3rem;
+    bottom: 0rem;
+  }
+  .div1::before {
+    --_size: calc(var(--_br) * 1.5);
+    --_corner-color: white;
+    grid-column: 4;
+    grid-row: 4;
+    left: -1rem;
+    bottom: 0rem;
+    --tw-rotate: 270deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+      rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+      scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+  .div1::after {
+    grid-column: 4;
+    grid-row: 4;
+    left: -3rem;
+    bottom: 0rem;
+  }
+}
