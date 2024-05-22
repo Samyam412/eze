@@ -29,12 +29,12 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-        <body className={`font-sans ${inter.variable} grid-background `}>
+        <body className={`font-sans ${inter.variable}  `}>
           <Toaster />
           <Navbar />
           <Container>{children}</Container>
           <Toaster />
-          <Footer />
+          {/* <Footer /> */}
         </body>
       </html>
     </ClerkProvider>
