@@ -1,7 +1,9 @@
-const HomeBanner = () => {
-  return ( <div>
-<h1>EZE <span>Appliances</span></h1>
-  </div> );
-}
- 
-export default HomeBanner;
+const HeroBanner = () => {
+  return (
+    <div>
+        <h1>I have noting</h1>
+    </div>
+  );
+};
+
+export default HeroBanner;

@@ -1,6 +1,6 @@
 import "~/styles/globals.css";
 
-import { Inter } from "next/font/google";
+import { Prosto_One } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import Navbar from "~/components/navbar/navbar";
 import { Toaster } from "~/components/ui/sonner";
@@ -9,15 +9,16 @@ import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
 import Footer from "~/components/footer/footer";
 import Container from "~/components/container";
-const inter = Inter({
+const prosto = Prosto_One({
   subsets: ["latin"],
-  variable: "--font-sans",
+  weight: '400',
+  style: 'normal',
 });
 
 export const metadata = {
-  title: "ToysNPark",
-  description: "A one stop solution for all your toy needs",
-  icons: [{ rel: "icon", url: "/toysnpark-logo.ico" }],
+  title: "EZE Appliances",
+  description: "Home Appliances made Affordable",
+  icons: [{ rel: "icon", url: "/eze.ico" }],
 };
 
 export default function RootLayout({
@@ -29,7 +30,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-        <body className={`font-sans ${inter.variable}  `}>
+        <body className={`font-sans ${prosto.className}  `}>
           <Toaster />
           <Navbar />
           <Container>{children}</Container>

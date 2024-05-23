@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Container from "../container";
 import SearchInput from "./search-input";
-import { League_Gothic } from "next/font/google";
 import {
   ClerkLoaded,
   ClerkLoading,
@@ -14,10 +13,12 @@ import Cart from "../cart/cart";
 import { CustomUserButton } from "./user-button";
 import logo from "~/../public/logo.jpg";
 import Image from "next/image";
+import  MotionNav  from "../motion/nav";
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white/50 text-slate-800 shadow-md backdrop-blur-md">
+    <MotionNav
+    >
       <Container>
         <Link
           href="/"
@@ -46,7 +47,7 @@ const Navbar = () => {
           </div>
         </Link>
       </Container>
-    </nav>
+    </MotionNav>
   );
 };
 
